@@ -1,6 +1,6 @@
 const express = require("express");
 const { connect } = require("./db");
-require("dotenv").config();
+
 const { RegisterModel } = require("./model/register.model");
 const { SocialModel } = require("./model/post.model");
 const bcrypt = require("bcrypt");
@@ -95,12 +95,12 @@ server.delete("/posts/delete/:id", async (req, res) => {
   }
 });
 
-server.listen(process.env.port, async () => {
+server.listen(3500, async () => {
   try {
     await connect;
     console.log("mongoDb connected");
   } catch (error) {
     console.log(error);
   }
-  console.log(`server running at port ${process.env.port}`);
+  console.log(`server running at port 3500`);
 });
